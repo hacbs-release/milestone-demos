@@ -5,7 +5,7 @@ metadata:
   namespace: managed
 spec:
   pipeline: m5-release-pipeline
-#  bundle: quay.io/hacbs-release/demo:m5-alpine
+  bundle: quay.io/hacbs-release/m5-release-pipeline:main
   policy: m5-policy
   params:
     - name: extraConfigGitUrl
