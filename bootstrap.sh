@@ -7,12 +7,14 @@ QUAY_ROBOT_ACCOUNT="hacbs-release-tests+m5_robot_account"
 QUAY_SECRET_NAME="hacbs-release-tests-token"
 RESOURCES_PATH="base"
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+SERVICE_ACCOUNT="m5-service-account"
 
 tempDir=$(mktemp -d /tmp/m5.XXX)
 trap 'rm -rf "$tempDir"' EXIT
 
 create_resources() {
   kubectl apply -k "$SCRIPT_DIR/$RESOURCES_PATH"
+  oc -n "$NAMESPACE" policy add-role-to-user edit -z "$SERVICE_ACCOUNT"
 }
 
 create_quay_secret() {
