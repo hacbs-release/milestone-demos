@@ -1,0 +1,13 @@
+---
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlanAdmission
+metadata:
+  name: m5-release-plan-admission
+  namespace: managed
+spec:
+  displayName: Release Plan Admission
+  application: m5-app
+  origin:
+    namespace: demo
+  environment: m5-environment
+  releaseStrategy: m5-strategy

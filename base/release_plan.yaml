@@ -1,0 +1,10 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ReleasePlan
+metadata:
+  name: m5-release-plan
+  namespace: demo
+spec:
+  displayName: Release Plan
+  application: m5-app
+  target:
+    namespace: managed
