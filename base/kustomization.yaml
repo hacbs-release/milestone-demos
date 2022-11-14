@@ -4,7 +4,8 @@ resources:
   - namespaces.yaml
   - application_snapshot.yaml
   - release_strategy.yaml
-  - release_links.yaml
+  - release_plan.yaml
+  - release_plan_admission.yaml
   - tekton_feature_flags_config_map.yaml
   - persistent_volume_claim.yaml
   - service_account.yaml
